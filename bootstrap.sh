@@ -47,4 +47,4 @@ if [[ ! -d $INSTALL_PATH ]]; then
 fi
 
 # Run the playbook
-#ansible-playbook $INSTALL_PATH/local.yml -K
+ansible-playbook $INSTALL_PATH/local.yml -K
