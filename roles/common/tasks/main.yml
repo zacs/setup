@@ -18,3 +18,8 @@
     - sloccount
     - autoenv
   when: ansible_os_family == 'Darwin'
+
+- name: apply OS X for hackers settings
+  shell: bash {{ item }}
+  with_file: osx
+  when: ansible_os_family == 'Darwin'
