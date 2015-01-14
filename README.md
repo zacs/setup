@@ -10,11 +10,12 @@ needs.
 
 ### Set up
 
-First clone this repo somewhere local. Something like `~/.setup` or `~/Code/setup` should work fine. 
+To install, all you need to do is run `bootstrap.sh` remotely. It will install some pre-requisites (gcc,
+[Homebrew](http://brew.sh/), git, and [Ansible](http://docs.ansible.com/)) and will then clone this repo locally (by default it clones into `~/.setup`) and run the playbook:
 
-Run the bootstrap script. This will ensure gcc,
-[Homebrew](http://brew.sh/), git, and [Ansible](http://docs.ansible.com/) are
-installed:
+    $ curl -fsSL https://raw.githubusercontent.com/zacs/setup/master/bootstrap.sh | sh
+
+If you prefer not to run code remotely, you just need to clone the repo down wherever you would like, and run:
 
     $ ./bootstrap.sh
 
