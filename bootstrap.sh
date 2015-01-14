@@ -6,7 +6,7 @@ set -e
 
 # Set install location -- this is where the playbook repo gets cloned
 #  into. Suggest something like ~/.setup or ~/Code/setup
-$INSTALL_PATH="$HOME/.setup"
+INSTALL_PATH="$HOME/.setup"
 
 # Download and install Command Line Tools if no developer tools exist
 # Checking for GCC isn't reliable. An xcode-select command returns 2 
