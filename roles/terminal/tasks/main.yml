@@ -1,0 +1,6 @@
+- name: open themes in Terminal
+  shell: open {{ item }}
+  with_file:
+    - IR_Black.terminal
+    - Solarized_Dark.terminal
+  when: ansible_os_family == 'Darwin'

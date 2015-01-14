@@ -14,7 +14,7 @@ set -e
 #       * ensure dev tools are installed by checking the output of gcc
 #       * check to see if gcc binary even exists ( original logic )
 # if either of the conditions are met, install dev tools
-if [[ $(/usr/bin/gcc 2>&1) =~ "no developer tools were found" ]] || [[ ! -x /usr/bin/gcc ]]; then
+if [[ -x "xcode-select -p" ]]; then
     echo "Info   | Install   | xcode"
     xcode-select --install
 fi
@@ -25,6 +25,11 @@ if [[ ! -x /usr/local/bin/brew ]]; then
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
 
+# Download and install git
+if [[ ! -x /usr/local/bin/git ]]; then
+    echo "Info   | Install   | git"
+    brew install git
+fi
 
 # Download and install Ansible
 if [[ ! -x /usr/local/bin/ansible ]]; then
@@ -37,4 +42,5 @@ fi
 # This should be subsequently updated in shell settings
 export PATH=/usr/local/bin:$PATH
 
+# Run the playbook
 ansible-playbook local.yml -K

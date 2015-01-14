@@ -13,6 +13,11 @@
     dest=~/.zshrc
     src=zshrc
 
+- name: add prose theme
+  copy: >
+    dest=~/.oh-my-zsh/themes
+    src=prose.zsh-them
+
 - name: add zsh to list of shells
   lineinfile: >
     backup=yes

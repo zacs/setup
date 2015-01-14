@@ -1,6 +1,6 @@
 # Personal computer configuration.
 
-This is my personal MacBook configuration. There are many like it, but
+This is my personal configuration bootstrapper. There are many like it, but
 this one is mine.
 
 For that reason it's largely set up for my particular needs. If you want
@@ -10,20 +10,16 @@ needs.
 
 ### Set up
 
+First clone this repo somewhere local. Something like `~/.setup` or `~/Code/setup` should work fine. 
+
 Run the bootstrap script. This will ensure gcc,
-[Homebrew](http://brew.sh/), and [Ansible](http://docs.ansible.com/) are
+[Homebrew](http://brew.sh/), git, and [Ansible](http://docs.ansible.com/) are
 installed:
 
     $ ./bootstrap.sh
 
 After installing the prerequisites this will run the `local` playbook
-for the first time. The script `configure` is now in `/usr/local/bin`
-and you can just execute that script:
-
-    $ configure
-
-It's a shortcut to this command, as it would be run from the
-configuration directory:
+for the first time. If for some reason `bootstrap.sh` barfs, you can run the playbook manually via:
 
     $ ansible-playbook install.yml -K
 

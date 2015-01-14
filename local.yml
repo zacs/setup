@@ -4,8 +4,7 @@
     - homebrew
     - common
     - zsh
-    - vim
     - python
-    - ruby
-    - node
-    - dev
+    - xcode
+    - terminal
+    - sublime
