@@ -1,5 +1,5 @@
 ---
 - name: add Monokai XCode theme
   copy: >
-    dest=~/Library/Developer/Xcode/UserData/FontAndColorThemes
+    dest=~/Library/Developer/Xcode/UserData/FontAndColorThemes/Monokai_Revisited.dvtcolortheme
     src=Monokai_Revisited.dvtcolortheme

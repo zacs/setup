@@ -1,0 +1,5 @@
+---
+name: add ,slate
+  copy: >
+    dest=~/.slate
+    src=dotslate
