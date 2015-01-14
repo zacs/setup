@@ -4,16 +4,13 @@
 
 set -e
 
+# Set install location -- this is where the playbook repo gets cloned
+#  into. Suggest something like ~/.setup or ~/Code/setup
+$INSTALL_PATH=~/.setup
+
 # Download and install Command Line Tools if no developer tools exist
-#       * previous evaluation didn't work completely, due to gcc binary existing for vanilla os x install
-#       * gcc output on vanilla osx box:
-#       * 'xcode-select: note: no developer tools were found at '/Applications/Xcode.app', requesting install.
-#       * Choose an option in the dialog to download the command line developer tools'
-#
-# Evaluate 2 conditions
-#       * ensure dev tools are installed by checking the output of gcc
-#       * check to see if gcc binary even exists ( original logic )
-# if either of the conditions are met, install dev tools
+# Checking for GCC isn't reliable. An xcode-select command returns 2 
+#  when Xcode isn't installed, so let's use that
 if [[ -x "xcode-select -p" ]]; then
     echo "Info   | Install   | xcode"
     xcode-select --install
@@ -42,5 +39,11 @@ fi
 # This should be subsequently updated in shell settings
 export PATH=/usr/local/bin:$PATH
 
+# Clone the repo locally so it can be run
+if [[ ! -d $INSTALL_PATH ]]; then
+    git clone https://github.com/zacs/setup.git $INSTALL_PATH
+    echo "Info   | Clone     | setup repo"
+fi
+
 # Run the playbook
-ansible-playbook local.yml -K
+#ansible-playbook $INSTALL_PATH/local.yml -K
