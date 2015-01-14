@@ -16,7 +16,7 @@
 - name: add prose theme
   copy: >
     dest=~/.oh-my-zsh/themes/prose.zsh-theme
-    src=prose.zsh-them
+    src=prose.zsh-theme
 
 - name: add zsh to list of shells
   lineinfile: >
