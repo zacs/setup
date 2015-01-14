@@ -41,6 +41,7 @@ export PATH=/usr/local/bin:$PATH
 
 # Clone the repo locally so it can be run
 if [[ ! -d $INSTALL_PATH ]]; then
+    mkdir -p $INSTALL_PATH
     git clone https://github.com/zacs/setup.git $INSTALL_PATH
     echo "Info   | Clone     | setup repo"
 fi
