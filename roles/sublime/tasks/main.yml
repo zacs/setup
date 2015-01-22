@@ -1,3 +1,6 @@
 ---
 # TODO: setup the symlinks so ST3's prefs point to Dropbox
 # Somehow need to check if Dropbox is installed/synced though
+
+# TODO: link to subl cmdline tool
+# ln -s ~/Library/AppSupport/etc/subl /usr/local/bin/subl

@@ -2,24 +2,64 @@
 - name: install CLI tools
   homebrew: name={{ item }} state=present
   with_items:
-    - mercurial
-    - tmux
-    - tree
-    - augeas
-    - readline
+    - git
     - s3cmd
-    - siege
-    - tarsnap
     - wget
     - heroku-toolbelt
-    - ack
     - hub
-    - ctags
-    - sloccount
-    - autoenv
+    - python
+    - ruby
+    - node
+    - archey
+    - the_platinum_searcher
+    - brew-gem
+    - brew-pip
+    - hub
+    - imagemagick
+    - jekyll
+    - kramdown
+    - yuicompressor
+    - csso
+    - watchman
+    - ffmpeg
+  when: ansible_os_family == 'Darwin'
+
+- name: install binary casks
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - 1password
+    - azure-cli
+    - adobe-creative-cloud
+    - adobe-Photoshop-CS6
+    - alfred
+    - archiver
+    - arq
+    - audio-hijack-pro
+    - base
+    - beamer
+    - keepingyouawake
+    - charles
+    - chromium
+    - cloak
+    - dnscrypt
+    - doxie
+    - dropbox
+    - dropletmanager
+    - epubquicklook
+    - flash
+    - flux
+    - ios7-screensaver
+    - istat-menus
+    - java
+    - kindlegen
+    - mailbox
+    - soulver
+    - sidestep
   when: ansible_os_family == 'Darwin'
 
 - name: apply OS X for hackers settings
   shell: bash {{ item }}
   with_file: osx
   when: ansible_os_family == 'Darwin'
+
+# TODO: Add apt-get calls for Ubuntu
