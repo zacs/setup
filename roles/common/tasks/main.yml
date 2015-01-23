@@ -22,6 +22,7 @@
     - csso
     - watchman
     - ffmpeg
+    - youtube-dl
   when: ansible_os_family == 'Darwin'
 
 - name: install binary casks
@@ -30,7 +31,7 @@
     - 1password
     - azure-cli
     - adobe-creative-cloud
-    - adobe-Photoshop-CS6
+    # - adobe-Photoshop-CS6 # no formula in caskroom/versions yet
     - alfred
     - archiver
     - arq
@@ -45,21 +46,44 @@
     - doxie
     - dropbox
     - dropletmanager
-    - epubquicklook
     - flash
     - flux
+    - gitbox
+    - google-chrome-canary
     - ios7-screensaver
     - istat-menus
     - java
+    - kindle
     - kindlegen
     - mailbox
-    - soulver
+    - media-converter # could make its own role and clone the added presets i use
+    - openemu-experimental
+    - plug
+    - sequel-pro
     - sidestep
+    - soulver
+    - spotify
+    - steam
+    - steermouse
+    - sublime-text3
+    - tagger
+    - trailer
+    - transmission
+    - transmit
+    - unison # necessary?
+    - vagrant
+    - virtualbox
+    - vlc
   when: ansible_os_family == 'Darwin'
 
 - name: apply OS X for hackers settings
   shell: bash {{ item }}
   with_file: osx
   when: ansible_os_family == 'Darwin'
+
+- name: create code dir
+  file: name={{ item }} state=directory
+  with_items:
+    - '{{ home }}/Code'
 
 # TODO: Add apt-get calls for Ubuntu

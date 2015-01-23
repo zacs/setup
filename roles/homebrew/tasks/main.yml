@@ -2,3 +2,9 @@
 - name: update homebrew
   command: brew update
   when: ansible_os_family == 'Darwin'
+
+- name: add taps
+  command: brew tap
+  with_items:
+    - caskroom/versions
+  when: ansible_os_family == 'Darwin'
