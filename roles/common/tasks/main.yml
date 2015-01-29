@@ -16,13 +16,17 @@
     - brew-pip
     - hub
     - imagemagick
-    - jekyll
-    - kramdown
     - yuicompressor
-    - csso
     - watchman
     - ffmpeg
     - youtube-dl
+  when: ansible_os_family == 'Darwin'
+
+- name: install gem tools
+  gem: name={{ item }} state=present
+  with_items:
+    - jekyll
+    - kramdown
   when: ansible_os_family == 'Darwin'
 
 - name: install binary casks
