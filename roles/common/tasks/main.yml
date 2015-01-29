@@ -4,7 +4,7 @@
   with_items:
     - git
     - s3cmd
-    - caskroom/cask/brew-cask
+    - brew-cask
     - wget
     - heroku-toolbelt
     - hub
