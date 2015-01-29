@@ -40,7 +40,6 @@
     - alfred
     - archiver
     - arq
-    - audio-hijack-pro
     - base
     - beamer
     - keepingyouawake
@@ -58,7 +57,6 @@
     - ios7-screensaver
     - istat-menus
     - java
-    - kindle
     - kindlegen
     - mailbox
     - media-converter # could make its own role and clone the added presets i use
