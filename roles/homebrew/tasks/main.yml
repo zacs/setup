@@ -4,7 +4,7 @@
   when: ansible_os_family == 'Darwin'
 
 - name: add taps
-  homebrew_rap: tap={{ item }} state=present
+  homebrew_tap: tap={{ item }} state=present
   with_items:
     - caskroom/cask
     - caskroom/versions
