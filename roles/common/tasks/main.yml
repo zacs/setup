@@ -80,8 +80,7 @@
   when: ansible_os_family == 'Darwin'
 
 - name: apply OS X for hackers settings
-  shell: {{ item }}
-  with_file: osx
+  script: osx
   when: ansible_os_family == 'Darwin'
 
 - name: create code dir
