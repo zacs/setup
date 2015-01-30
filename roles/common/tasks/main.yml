@@ -84,7 +84,7 @@
   when: ansible_os_family == 'Darwin'
 
 - name: create dirs
-  file: name={{ home }}/{{ item }} state=directory
+  file: name={{ ansible_env.home }}/{{ item }} state=directory
   with_items:
     - 'Code'
     - 'Code/scratch'
