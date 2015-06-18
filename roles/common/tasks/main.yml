@@ -40,12 +40,12 @@
     - alfred
     - archiver
     - arq
+    - atom
     - base
     - beamer
     - keepingyouawake
     - charles
     - chromium
-    - cloak
     - dnscrypt
     - doxie
     - dropbox
@@ -57,7 +57,6 @@
     - ios7-screensaver
     - istat-menus
     - java
-    - kindlegen
     - mailbox
     - media-converter # could make its own role and clone the added presets i use
     - openemu-experimental
@@ -67,15 +66,12 @@
     - soulver
     - spotify
     - steam
-    - steermouse
-    - sublime-text3
     - tagger
-    - trailer
     - transmission
     - transmit
-    - unison # necessary?
     - vagrant
     - virtualbox
+    - visual-studio-code
     - vlc
   when: ansible_os_family == 'Darwin'
 
