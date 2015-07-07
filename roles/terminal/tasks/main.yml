@@ -2,6 +2,7 @@
   shell: open {{ item }}
   with_file:
     - IR_Black.terminal
+  ignore_errors: yes
   when: ansible_os_family == 'Darwin'
 
 - name: 'Terminal: Set startup window'
