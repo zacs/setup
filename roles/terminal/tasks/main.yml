@@ -1,5 +1,5 @@
 - name: open themes in Terminal
-  shell: open -g {{ role_path }}/IR_Black.terminal
+  shell: open -g {{ role_path }}/files/IR_Black.terminal
   ignore_errors: yes
   when: ansible_os_family == 'Darwin'
 
