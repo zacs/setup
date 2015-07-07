@@ -2,5 +2,12 @@
   shell: open {{ item }}
   with_file:
     - IR_Black.terminal
-    - Solarized_Dark.terminal
+  when: ansible_os_family == 'Darwin'
+
+- name: 'Terminal: Set startup window'
+  shell: 'defaults write {{ user_lib_prefs }}/com.apple.Terminal "Startup Window Settings" -string IR_Black'
+  when: ansible_os_family == 'Darwin'
+
+- name: 'Terminal: Set default window'
+  shell: 'defaults write {{ user_lib_prefs }}/com.apple.Terminal "Default Window Settings" -string IR_Black'
   when: ansible_os_family == 'Darwin'
