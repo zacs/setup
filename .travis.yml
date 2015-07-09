@@ -6,4 +6,10 @@ before_install:
   - brew update
   - brew install python ansible
 script:
-  - ansible-playbook $TRAVIS_BUILD_DIR/local.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-homebrew.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-common.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-zsh.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-python.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-xcode.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-terminal.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-slate.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
