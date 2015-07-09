@@ -6,4 +6,4 @@ before_install:
   - brew update
   - brew install python ansible
 script:
-  - ansible-playbook $TRAVIS_BUILD_DIR/local.yml -i $TRAVIS_BUILD_DIR/hosts --ask-sudo-pass --connection=local
+  - sudo ansible-playbook $TRAVIS_BUILD_DIR/local.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
