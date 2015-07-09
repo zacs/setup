@@ -4,7 +4,8 @@ os:
   - osx
 before_install:
   - brew update
-  - brew install python ansible
+  - brew install ansible
+  - ln -s $TRAVIS_BUILD_DIR/roles $TRAVIS_BUILD_DIR/test/roles
 script:
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-homebrew.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-common.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
