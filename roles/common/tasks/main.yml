@@ -29,6 +29,12 @@
     - kramdown
   when: ansible_os_family == 'Darwin'
 
+- name: install photoshop cs5 (skip during CI builds)
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - adobe-photoshop-cs5
+  when: ansible_os_family == 'Darwin' and (ansible_env.CI != 'true' or ansible_env.CLI is not defined)
+
 - name: install binary casks
   homebrew_cask: name={{ item }} state=present
   with_items:
@@ -63,12 +69,6 @@
     - visual-studio-code
     - vlc
   when: ansible_os_family == 'Darwin'
-
-- name: install photoshop cs5 (skip during CI builds)
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - adobe-photoshop-cs5
-  when: ansible_os_family == 'Darwin' and {{ ansible_env.CI }} != 'true'
 
 - name: apply OS X for hackers settings
   script: osx
