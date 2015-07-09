@@ -1,4 +1,4 @@
 ---
 - hosts: local
   roles:
-    - homebrew
+    - $TRAVIS_BUILD_DIR/homebrew

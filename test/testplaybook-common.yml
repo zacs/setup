@@ -1,4 +1,4 @@
 ---
 - hosts: local
   roles:
-    - common
+    - $TRAVIS_BUILD_DIR/common

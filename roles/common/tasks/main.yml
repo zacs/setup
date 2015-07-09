@@ -35,7 +35,7 @@
   with_items:
     - 1password
     - azure-cli
-    - adobe-photoshop-cs5
+    #- adobe-photoshop-cs5
     - alfred
     - archiver
     - arq
