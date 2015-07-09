@@ -68,7 +68,7 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - adobe-photoshop-cs5
-  when: ansible_os_family == 'Darwin' and ansible_env.CI != 'TRUE'
+  when: ansible_os_family == 'Darwin' and {{ ansible_env.CI }} != 'true'
 
 - name: apply OS X for hackers settings
   script: osx
