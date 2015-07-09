@@ -6,7 +6,6 @@
     - s3cmd
     - brew-cask
     - wget
-    - heroku-toolbelt
     - hub
     - python
     - ruby
@@ -16,11 +15,11 @@
     - brew-gem
     - brew-pip
     - hub
-    - imagemagick
     - yuicompressor
     - watchman
     - ffmpeg
     - youtube-dl
+    - zsh
   when: ansible_os_family == 'Darwin'
 
 - name: install gem tools
@@ -35,7 +34,6 @@
   with_items:
     - 1password
     - azure-cli
-    #- adobe-photoshop-cs5
     - alfred
     - archiver
     - arq
@@ -65,6 +63,12 @@
     - visual-studio-code
     - vlc
   when: ansible_os_family == 'Darwin'
+
+- name: install photoshop cs5 (skip during CI builds)
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - adobe-photoshop-cs5
+  when: ansible_os_family == 'Darwin' and ansible_env.CI != 'TRUE'
 
 - name: apply OS X for hackers settings
   script: osx

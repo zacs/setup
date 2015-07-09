@@ -9,7 +9,7 @@ before_install:
 script:
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-homebrew.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-common.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
-  - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-zsh.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - sudo ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-zsh.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-python.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-xcode.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-terminal.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local

@@ -1,9 +1,5 @@
 ---
-- name: install zsh
-  homebrew: name=zsh state=present
-  when: ansible_os_family == 'Darwin'
-
-- name: update oh-my-zsh
+- name: install oh-my-zsh
   git: >
     repo=https://github.com/robbyrussell/oh-my-zsh.git
     dest=~/.oh-my-zsh
