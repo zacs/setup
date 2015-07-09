@@ -9,7 +9,7 @@ set -e
 INSTALL_PATH="$HOME/.setup"
 
 # Download and install Command Line Tools if no developer tools exist
-# Checking for GCC isn't reliable. An xcode-select command returns 2 
+# Checking for GCC isn't reliable. An xcode-select command returns 2
 #  when Xcode isn't installed, so let's use that
 if [[ -x "xcode-select -p" ]]; then
     echo "Info   | Install   | xcode"

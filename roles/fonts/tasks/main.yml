@@ -1,0 +1,13 @@
+---
+- name: download and unzip source code pro
+  unarchive: >
+    src=https://github.com/adobe-fonts/source-code-pro/archive/1.017R.zip
+    dest=/tmp/scp
+  copy: no
+  when: ansible_os_family == 'Darwin'
+
+- name: install source code pro
+  copy: >
+    dest=~/Library/Fonts
+    src=/tmp/scp/OTF/
+  when: ansible_os_family == 'Darwin'

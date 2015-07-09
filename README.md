@@ -22,7 +22,7 @@ If you prefer not to run code remotely, you just need to clone the repo down whe
 After installing the prerequisites this will run the `local` playbook
 for the first time. If for some reason `bootstrap.sh` barfs, you can run the playbook manually via:
 
-    $ ansible-playbook install.yml -K
+    $ ansible-playbook local.yml --become-method=sudo
 
 The `-K` flag means that Ansible will prompt you for your sudo password
 before it executes the playbook.
