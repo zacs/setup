@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zacs/setup.svg)](https://travis-ci.org/zacs/setup)
+
 # Personal computer configuration.
 
 This is my personal configuration bootstrapper. There are many like it, but
