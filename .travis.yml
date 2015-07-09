@@ -1,8 +1,9 @@
 language: objective-c
+sudo: required
 os:
   - osx
 before_install:
   - brew update
   - brew install python ansible
 script:
-  - travis_wait 60 ./test/test.sh
+  - ansible-playbook $TRAVIS_BUILD_DIR/local.yml -i $TRAVIS_BUILD_DIR/hosts --ask-sudo-pass --connection=local
