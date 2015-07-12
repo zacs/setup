@@ -1,0 +1,8 @@
+---
+- name: login to atom
+  command: apm login
+  when: ansible_os_family == 'Darwin' and ansible_env.CI is not defined
+
+- name: install starred atom packages
+  command: apm stars --install
+  when: ansible_os_family == 'Darwin' and ansible_env.CI is not defined
