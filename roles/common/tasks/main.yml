@@ -70,6 +70,12 @@
     - vlc
   when: ansible_os_family == 'Darwin'
 
+- name: install fonts
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - font-source-code-pro
+  when: ansible_os_family == 'Darwin'
+
 - name: apply OS X for hackers settings
   script: osx
   when: ansible_os_family == 'Darwin'
