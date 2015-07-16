@@ -46,10 +46,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export EDITOR="subl -n -w"
+export EDITOR="atom -n -w"
 
 alias git=hub
-alias subl="subl -n"
+alias subl="atom -n"
+alias atom="atom -n"
 
 # findstr: find non-case-sens strings in current dir, recursive
 function findstr() {
