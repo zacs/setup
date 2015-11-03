@@ -78,7 +78,8 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - font-source-code-pro
-    - hack
+    - font-hack
+    - font-fantasque-sans-mono
   when: ansible_os_family == 'Darwin'
 
 - name: apply OS X for hackers settings

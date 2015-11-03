@@ -6,3 +6,9 @@
 - name: install starred atom packages
   command: apm stars --install
   when: ansible_os_family == 'Darwin' and ansible_env.CI is not defined
+
+- name: add config.cson
+  copy: >
+    dest=~/.atom/config.cson
+    src=config.cson
+  when: ansible_os_family == 'Darwin'
