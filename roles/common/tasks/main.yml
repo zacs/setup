@@ -70,7 +70,7 @@
   when: ansible_os_family == 'Darwin'
 
 - name: create ios emulator app link
-  command: ln -s /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app /Applications/iOS\ Simulator.app
+  command: ln -s /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app /Applications/iOS\ Simulator.app
   when: ansible_os_family == 'Darwin'
 
 - name: install fonts
