@@ -54,8 +54,8 @@
     - google-chrome-canary
     - istat-menus
     - java
-    - mailbox
     - media-converter # could make its own role and clone the added presets i use
+    - nylas-n1
     - openemu-experimental
     - sidestep
     - slate
