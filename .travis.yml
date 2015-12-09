@@ -1,10 +1,12 @@
-language: objective-c
+language: ruby
 sudo: required
 os:
   - osx
   - linux
+matrix:
+  allow_failures:
+    - os: linux
 before_install:
-  - brew update
   - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo apt-get update -qq; else brew update; fi
   - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo apt-get install -y ansible -qq; else brew install ansible; fi
   - ln -s $TRAVIS_BUILD_DIR/roles $TRAVIS_BUILD_DIR/test/roles

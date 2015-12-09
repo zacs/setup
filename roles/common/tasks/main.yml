@@ -106,5 +106,3 @@
   with_items:
     - 'Code'
     - 'Code/scratch'
-
-# TODO: Add apt-get calls for Ubuntu
