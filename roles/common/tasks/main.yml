@@ -22,7 +22,7 @@
 
 - name: update apt
   apt: update_cache=yes
-  when: ansible_os_family == 'Ubuntu'
+  when: ansible_distribution == 'Ubuntu'
 
 - name: install CLI tools (Ubuntu)
   apt: name={{ item }} state=present
@@ -36,7 +36,7 @@
     - ruby
     - wget
     - zsh
-  when: ansible_os_family == 'Ubuntu'
+  when: ansible_distribution == 'Ubuntu'
 
 - name: install gem tools
   gem: name={{ item }} state=present

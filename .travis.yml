@@ -9,7 +9,7 @@ matrix:
 before_install:
   - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo apt-get update -qq; else brew update; fi
   - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo apt-get install -y ansible -qq; else brew install ansible; fi
-  - ln -s $TRAVIS_BUILD_DIR/roles $TRAVIS_BUILD_DIR/test/roles
+  - ln -sv $TRAVIS_BUILD_DIR/roles $TRAVIS_BUILD_DIR/test/roles
 script:
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-homebrew.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-common.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
