@@ -1,5 +1,5 @@
 ---
-- name: install CLI tools
+- name: install CLI tools (OSX)
   homebrew: name={{ item }} state=present
   with_items:
     - git
@@ -11,16 +11,32 @@
     - ruby
     - node
     - archey
-    - the_platinum_searcher
     - brew-gem
     - brew-pip
     - hub
-    - yuicompressor
     - watchman
     - ffmpeg
     - youtube-dl
     - zsh
   when: ansible_os_family == 'Darwin'
+
+- name: update apt
+  apt: update_cache=yes
+  when: ansible_os_family == 'Ubuntu'
+
+- name: install CLI tools (Ubuntu)
+  apt: name={{ item }} state=present
+  with_items:
+    - build-essential
+    - clang
+    - libicu-dev
+    - nginx
+    - node
+    - python
+    - ruby
+    - wget
+    - zsh
+  when: ansible_os_family == 'Ubuntu'
 
 - name: install gem tools
   gem: name={{ item }} state=present

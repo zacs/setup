@@ -66,3 +66,6 @@ function findstr() {
         fi
     fi
 }
+
+# show sysinfo on new shell
+archey
