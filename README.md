@@ -1,4 +1,5 @@
-# Machine setup [![Build Status](https://travis-ci.org/zacs/setup.svg)](https://travis-ci.org/zacs/setup)
+# Machine setup
+[![Build Status](https://travis-ci.org/zacs/setup.svg)](https://travis-ci.org/zacs/setup)
 
 This is my personal machine setup.
 
