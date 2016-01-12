@@ -45,10 +45,11 @@
     - kramdown
   when: ansible_os_family == 'Darwin'
 
-- name: install photoshop cs5
+- name: install apps that need to skip CI
   homebrew_cask: name={{ item }} state=present
   with_items:
-    - adobe-photoshop-cs5
+    - adobe-photoshop-cs5     # large download causes CI timeout
+    - openemu-experimental    # dependent on newer OS version than Travis'
   when: ansible_os_family == 'Darwin' and ansible_env.CI is not defined
 
 - name: install binary casks
@@ -72,7 +73,6 @@
     - java
     - media-converter # could make its own role and clone the added presets i use
     - nylas-n1
-    - openemu-experimental
     - sidestep
     - sketch
     - sketch-toolbox
