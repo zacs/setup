@@ -19,3 +19,4 @@ script:
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-terminal.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-slate.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-atom.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
+  - sudo ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-dropbox.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
