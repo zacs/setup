@@ -58,7 +58,6 @@
     - 1password
     - azure-cli
     - alfred
-    - archiver
     - arq
     - atom
     - beamer
@@ -71,7 +70,6 @@
     - istat-menus
     - java
     - media-converter # could make its own role and clone the added presets i use
-    - nylas-n1
     - sidestep
     - sketch
     - sketch-toolbox
@@ -80,6 +78,7 @@
     - soulver
     - steermouse
     - tagger
+    - the-unarchiver
     - transmission
     - transmit
     - virtualbox
