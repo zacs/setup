@@ -7,12 +7,12 @@
 
 - name: Add Dropbox KeyServer
   sudo: True
-  command: apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+  command: apt-key adv --keyserver pgp.mit.edu --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   when: ansible_distribution == 'Ubuntu'
 
 - name: Add Dropbox PPA Repo
   sudo: True
-  command: sudo add-apt-repository "deb http://linux.dropbox.com/ubuntu {{os_name}} main"
+  command: add-apt-repository "deb http://linux.dropbox.com/ubuntu {{os_name}} main"
   when: ansible_distribution == 'Ubuntu'
 
 - name: Install Dropbox
