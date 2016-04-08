@@ -26,4 +26,4 @@ PROMPT='
 $(virtualenv_info)$(repo_char) '
 
 # Display the date.  (My desktop at work uses $(date -u ...) instead, because I use UTC a lot at work.
-RPROMPT='$(date "+%x %T %Z")'
+RPROMPT='$(date "+%x %T %Z") or $(date -u "+%x %T %Z")'
