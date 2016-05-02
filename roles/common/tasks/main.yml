@@ -28,6 +28,20 @@
   apt: name={{ item }} state=present
   with_items:
     - build-essential
+    - git
+    - cmake
+    - ninja-build
+    - python
+    - uuid-dev
+    - icu-devtools
+    - libbsd-dev
+    - libedit-dev
+    - libxml2-dev
+    - libsqlite3-dev
+    - swig
+    - libpython-dev
+    - libncurses5-dev
+    - pkg-config
     - clang
     - libicu-dev
     - nginx
