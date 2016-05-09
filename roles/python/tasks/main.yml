@@ -1,13 +1,38 @@
 ---
+- name: install pip and virtualenv (Ubuntu)
+  apt: name={{ item }} state=present
+  with_items:
+    - build-essential
+    - python-pip
+    - python-dev
+  when: ansible_distribution == 'Ubuntu'
+  become: yes
+  become_method: sudo
+
+- name: update pip
+  command: pip install --upgrade pip
+  when: ansible_distribution == 'Ubuntu'
+  become: yes
+  become_method: sudo
+
+- name: update virtualenv
+  command: pip install --upgrade virtualenv
+  when: ansible_distribution == 'Ubuntu'
+  become: yes
+  become_method: sudo
+
 - name: install pip
   command: >
     /usr/bin/easy_install pip
     creates=/usr/local/bin/pip
+  when: ansible_os_family == 'Darwin'
+
 
 - name: install virtualenv
   command: >
     /usr/local/bin/pip install virtualenv
     creates=/usr/local/bin/virtualenv
+  when: ansible_os_family == 'Darwin'
 
 - name: install Jedi
   pip: name=jedi

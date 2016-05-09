@@ -29,4 +29,6 @@
 
 - name: change to zsh (Ubuntu)
   shell: chsh -s /usr/bin/zsh {{ ansible_env.USER }}
+  become: yes
+  become_method: sudo
   when: ansible_distribution == 'Ubuntu'

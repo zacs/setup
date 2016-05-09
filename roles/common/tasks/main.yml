@@ -23,34 +23,26 @@
 - name: update apt
   apt: update_cache=yes
   when: ansible_distribution == 'Ubuntu'
+  become: yes
+  become_method: sudo
 
 - name: install CLI tools (Ubuntu)
   apt: name={{ item }} state=present
   with_items:
     - build-essential
+    - ffmpeg
     - git
-    - cmake
-    - ninja-build
-    - python
-    - uuid-dev
-    - icu-devtools
-    - libbsd-dev
-    - libedit-dev
-    - libxml2-dev
-    - libsqlite3-dev
-    - swig
-    - libpython-dev
-    - libncurses5-dev
-    - pkg-config
-    - clang
-    - libicu-dev
-    - nginx
-    - node
+    - nodejs
     - python
     - ruby
+    - s3cmd
+    - vim
     - wget
+    - youtube-dl
     - zsh
   when: ansible_distribution == 'Ubuntu'
+  become: yes
+  become_method: sudo
 
 - name: install gem tools
   gem: name={{ item }} state=present
