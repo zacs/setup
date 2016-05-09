@@ -56,8 +56,6 @@ fi
 # Run the playbook
 if [[ "$OSTYPE" == "darwin*" ]]; then
     ansible-playbook $INSTALL_PATH/local-osx.yml -i $INSTALL_PATH/hosts --ask-sudo-pass --connection=local
-fi
-
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     ansible-playbook $INSTALL_PATH/local-ubuntu.yml -i $INSTALL_PATH/hosts --ask-sudo-pass --connection=local
 fi
