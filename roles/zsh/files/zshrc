@@ -46,11 +46,14 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export EDITOR="atom -n -w"
-
-alias git=hub
-alias subl="atom -n"
-alias atom="atom -n"
+if [[ "$OSTYPE" == "darwin*" ]]; then
+    export EDITOR="atom -n -w"
+    alias git=hub
+    alias subl="atom -n"
+    alias atom="atom -n"
+else
+    export EDITOR="/usr/bin/vim"
+fi
 
 # findstr: find non-case-sens strings in current dir, recursive
 function findstr() {
