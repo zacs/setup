@@ -6,6 +6,14 @@ os:
 matrix:
   allow_failures:
     - os: linux
+    # Various reasons to allow failure here:
+    # - become vs sudo: Travis only supports Ubuntu 14.04 which means no 
+    #                   Ansible 1.9, so no support for new sudo method.
+    #                   Possible solution to use Docker to test on 16.04...
+    # - Ansible fails on Linux when using homebrew_tap. Need to try and PR
+    #   a graceful failure in the ansible-modules-extras repo for tap
+    # - Same as above, but with homebrew_cask as well. Should look at the 
+    #   homebrew extras module to see how it solves the problem. 
 before_install:
   - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo apt-get update -qq; else brew update; fi
   - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo apt-get install -y ansible -qq; else brew install ansible; fi

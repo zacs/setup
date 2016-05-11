@@ -53,6 +53,9 @@ if [[ "$OSTYPE" == "darwin*" ]]; then
     alias atom="atom -n"
 else
     export EDITOR="/usr/bin/vim"
+    # Just in case I am failing at context switching...
+    alias subl="vim"
+    alias atom="vim"
 fi
 
 # findstr: find non-case-sens strings in current dir, recursive
