@@ -67,5 +67,7 @@ function findstr() {
     fi
 }
 
-# show sysinfo on new shell
-archey
+# show sysinfo on new shell (OSX)
+if [[ "$OSTYPE" == "darwin*" ]]; then
+    archey
+fi
