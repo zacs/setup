@@ -1,0 +1,13 @@
+---
+- name: setup screenrc file
+  copy: >
+    dest=~/.screenrc
+    src=screenrc
+  when: ansible_distribution == 'Ubuntu'
+
+- name: add screen memory script
+  copy: >
+    dest=~/.screenrc.memory
+    src=memfree
+  when: ansible_distribution == 'Ubuntu'
+

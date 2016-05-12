@@ -58,6 +58,12 @@ else
     alias atom="vim"
 fi
 
+alias free="free -m"
+alias ping="ping -c 5"
+alias memused="free | grep Mem | awk '{print $3/$2 * 100.0}'"
+alias memfree="free | grep Mem | awk '{ printf(\"free: %.2f%\n\", \$4/\$2 * 100.0) }'"
+alias weather="curl -sS wttr.in/Seattle | head -27 "
+
 # findstr: find non-case-sens strings in current dir, recursive
 function findstr() {
     if [ “$2” != “” ]
