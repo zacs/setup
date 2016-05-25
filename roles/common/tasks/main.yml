@@ -9,7 +9,6 @@
     - hub
     - python
     - ruby
-    - ruby-dev
     - node
     - archey
     - brew-gem
@@ -37,6 +36,7 @@
     - nodejs
     - python
     - ruby
+    - ruby-dev
     - s3cmd
     - vim
     - wget
