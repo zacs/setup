@@ -9,6 +9,7 @@
     - hub
     - python
     - ruby
+    - ruby-dev
     - node
     - archey
     - brew-gem
