@@ -46,11 +46,23 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export EDITOR="atom -n -w"
+if [[ "$OSTYPE" == "darwin*" ]]; then
+    export EDITOR="atom -n -w"
+    alias git=hub
+    alias subl="atom -n"
+    alias atom="atom -n"
+else
+    export EDITOR="/usr/bin/vim"
+    # Just in case I am failing at context switching...
+    alias subl="vim"
+    alias atom="vim"
+fi
 
-alias git=hub
-alias subl="atom -n"
-alias atom="atom -n"
+alias free="free -m"
+alias ping="ping -c 5"
+alias memused="free | grep Mem | awk '{print $3/$2 * 100.0}'"
+alias memfree="free | grep Mem | awk '{ printf(\"free: %.2f%\n\", \$4/\$2 * 100.0) }'"
+alias weather="curl -sS wttr.in/Seattle | head -27 "
 
 # findstr: find non-case-sens strings in current dir, recursive
 function findstr() {
@@ -67,5 +79,7 @@ function findstr() {
     fi
 }
 
-# show sysinfo on new shell
-archey
+# show sysinfo on new shell (OSX)
+if [[ "$OSTYPE" == "darwin*" ]]; then
+    archey
+fi
