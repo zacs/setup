@@ -11,7 +11,6 @@ before_install:
   - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo apt-get install -y ansible -qq; else brew install ansible; fi
   - ln -sv $TRAVIS_BUILD_DIR/roles $TRAVIS_BUILD_DIR/test/roles
 script:
-  - sh $TRAVIS_BUILD_DIR/bootstrap.sh
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-homebrew.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-common.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
   - sudo ansible-playbook $TRAVIS_BUILD_DIR/test/testplaybook-zsh.yml -i $TRAVIS_BUILD_DIR/hosts --connection=local
