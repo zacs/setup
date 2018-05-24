@@ -9,4 +9,5 @@
     - caskroom/cask
     - caskroom/versions
     - caskroom/fonts
+    - zacs/personal
   when: ansible_os_family == 'Darwin'
