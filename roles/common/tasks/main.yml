@@ -1,22 +1,8 @@
 ---
 - name: install CLI tools (OSX)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - git
-    - s3cmd
-    - wget
-    - hub
-    - python
-    - ruby
-    - node
-    - archey
-    - brew-gem
-    - brew-pip
-    - hub
-    - watchman
-    - ffmpeg
-    - youtube-dl
-    - zsh
+  homebrew: name=['git', 's3cmd', 'wget', 
+'hub', 'python', 'ruby', 'node', 'archey', 'brew-gem', 'brew-pip', 'hub', 
+'watchman', 'ffmpeg', 'youtube-dl', 'zsh'] state=present
   when: ansible_os_family == 'Darwin'
 
 - name: update apt
@@ -57,6 +43,7 @@
   with_items:
     - adobe-photoshop-cs5     # large download causes CI timeout
     - openemu-experimental    # dependent on newer OS version than Travis'
+    - virtualbox              # needs manual aproval in MacOS Security & Privacy prefpane
   when: ansible_os_family == 'Darwin' and ansible_env.CI is not defined
 
 - name: install binary casks
@@ -89,7 +76,6 @@
     - the-unarchiver
     - transmission
     - transmit
-    - virtualbox
     - visual-studio-code
     - vlc
   when: ansible_os_family == 'Darwin'
