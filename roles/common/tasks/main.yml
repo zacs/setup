@@ -1,8 +1,9 @@
 ---
 - name: install CLI tools (OSX)
-  homebrew: name=['git', 's3cmd', 'wget', 
-'hub', 'python', 'ruby', 'node', 'archey', 'brew-gem', 'brew-pip', 'hub', 
-'watchman', 'ffmpeg', 'youtube-dl', 'zsh'] state=present
+  homebrew: 
+    name: ['git', 's3cmd', 'wget', 'hub', 'python', 'ruby', 'node', 'archey', 'brew-gem', 'brew-pip', 'hub', 'watchman', 'ffmpeg', 'youtube-dl', 'zsh']
+    state: present
+    update_homebrew: yes
   when: ansible_os_family == 'Darwin'
 
 - name: update apt
