@@ -1,8 +1,8 @@
 ---
 - name: install oh-my-zsh
-  git: >
-    repo=https://github.com/robbyrussell/oh-my-zsh.git
-    dest=~/.oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
 
 - name: setup zshrc file
   copy: >
