@@ -5,9 +5,9 @@
     dest: ~/.oh-my-zsh
 
 - name: setup zshrc file
-  copy: >
-    dest=~/.zshrc
-    src=zshrc
+  copy: 
+    dest: ~/.zshrc
+    src: zshrc
 
 - name: create custom themes folder
   file:
@@ -15,9 +15,9 @@
     state: directory
 
 - name: add prose theme
-  copy: >
-    dest=~/.oh-my-zsh/custom/themes/prose.zsh-theme
-    src=prose.zsh-theme
+  copy:
+    dest: ~/.oh-my-zsh/custom/themes/prose.zsh-theme
+    src: prose.zsh-theme
 
 - name: add zsh to list of shells
   lineinfile: >
