@@ -10,7 +10,7 @@
   when: ansible_os_family == 'Darwin'
 
 - name: open themes in Terminal
-  shell: open -g ~/.terminal/ocean-dark.terminal
+  shell: open -g ~/.terminal/terminal-ocean-dark.terminal
   ignore_errors: yes
   when: ansible_os_family == 'Darwin'
 
