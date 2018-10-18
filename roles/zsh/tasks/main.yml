@@ -13,7 +13,7 @@
   copy:
     dest: ~/.oh-my-zsh/custom/themes/prose.zsh-theme
     src: prose.zsh-theme
-  when: ansible_env.CI is not defined
+  when: ansible_os_family == 'Darwin' and ansible_env.CI is not defined
 
 - name: add zsh to list of shells
   lineinfile: >
