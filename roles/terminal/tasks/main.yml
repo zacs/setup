@@ -1,12 +1,23 @@
+- name: create folder for terminal theme
+  file:
+    path: ~/.terminal
+    state: directory
+
+- name: download ocean theme
+  get_url:
+    url: https://raw.githubusercontent.com/mdo/ocean-terminal/master/terminal-ocean-dark.terminal
+    dest: ~/.terminal/ocean-dark.terminal
+  when: ansible_os_family == 'Darwin'
+
 - name: open themes in Terminal
-  shell: open -g {{ role_path }}/files/IR_Black.terminal
+  shell: open -g ~/.terminal/ocean-dark.terminal
   ignore_errors: yes
   when: ansible_os_family == 'Darwin'
 
 - name: 'Terminal: Set startup window'
-  shell: 'defaults write com.apple.Terminal "Startup Window Settings" -string IR_Black'
+  shell: 'defaults write com.apple.Terminal "Startup Window Settings" -string "Ocean Dark"'
   when: ansible_os_family == 'Darwin'
 
 - name: 'Terminal: Set default window'
-  shell: 'defaults write com.apple.Terminal "Default Window Settings" -string IR_Black'
+  shell: 'defaults write com.apple.Terminal "Default Window Settings" -string "Ocean Dark"'
   when: ansible_os_family == 'Darwin'

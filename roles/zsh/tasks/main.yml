@@ -9,6 +9,11 @@
     dest=~/.zshrc
     src=zshrc
 
+- name: create custom themes folder
+  file:
+    path: ~/.oh-my-zsh/custom/themes
+    state: directory
+
 - name: add prose theme
   copy: >
     dest=~/.oh-my-zsh/custom/themes/prose.zsh-theme

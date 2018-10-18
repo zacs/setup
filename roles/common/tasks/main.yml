@@ -1,6 +1,6 @@
 ---
 - name: install CLI tools (OSX)
-  homebrew: 
+  homebrew:
     name: ['git', 's3cmd', 'wget', 'hub', 'python', 'ruby', 'node', 'archey', 'brew-gem', 'brew-pip', 'hub', 'watchman', 'ffmpeg', 'youtube-dl', 'zsh']
     state: present
     update_homebrew: yes

@@ -4,3 +4,4 @@
   with_items:
     - clang
     - libicu-dev
+  when: ansible_distribution == 'Ubuntu'
