@@ -7,31 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="prose"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
@@ -40,29 +15,26 @@ ZSH_THEME="prose"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew brew-cask osx python terminalapp virtualenv xcode)
+plugins=(git osx python terminalapp virtualenv xcode)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
-if [[ "$OSTYPE" == "darwin*" ]]; then
-    export EDITOR="atom -n -w"
-    alias git=hub
-    alias subl="atom -n"
-    alias atom="atom -n"
-else
-    export EDITOR="/usr/bin/vim"
-    # Just in case I am failing at context switching...
-    alias subl="vim"
-    alias atom="vim"
-fi
-
-alias free="free -m"
+export EDITOR="atom -n -w"
+alias git=hub
+alias atom="atom -n"
+alias subl="atom -n"
+alias mate="atom -n"
+alias free="top -l 1 -s 0 | grep PhysMem:"
 alias ping="ping -c 5"
-alias memused="free | grep Mem | awk '{print $3/$2 * 100.0}'"
-alias memfree="free | grep Mem | awk '{ printf(\"free: %.2f%\n\", \$4/\$2 * 100.0) }'"
-alias weather="curl -sS wttr.in/Seattle | head -27 "
+alias weather="curl -sS wttr.in/98122 | head -27 "
+alias up="ping 8.8.8.8"
+alias cpu="sysctl -n machdep.cpu.brand_string"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias icloud="brctl monitor ~/Library/Mobile Documents/com~apple~CloudDocs/"
+alias pyc="find . -name \"*.pyc\" -exec rm -rf {} \;"
+alias uptime="grc uptime"
 
 # findstr: find non-case-sens strings in current dir, recursive
 function findstr() {
@@ -77,6 +49,11 @@ function findstr() {
             echo “You must search for a string.\nUsage: findstr STRING [PATH]”
         fi
     fi
+}
+
+function battery() { ,m
+    grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
+    grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
 }
 
 # show sysinfo on new shell (OSX)
