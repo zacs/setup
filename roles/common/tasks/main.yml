@@ -14,71 +14,24 @@
 
 - name: install CLI tools (Ubuntu)
   apt: name={{ item }} state=present
-  with_items:
-    - build-essential
-    - avahi-daemon
-    - ffmpeg
-    - git
-    - nodejs
-    - python
-    - ruby
-    - ruby-dev
-    - s3cmd
-    - vim
-    - wget
-    - youtube-dl
-    - zsh
+  with_items: "{{ cli-tools }}"
   when: ansible_distribution == 'Ubuntu'
   become: yes
   become_method: sudo
 
 - name: install gem tools
   gem: name={{ item }} state=present
-  with_items:
-    - jekyll
-    - kramdown
+  with_items: "{{ gem-tools }}"
   when: ansible_os_family == 'Darwin'
 
 - name: install apps that need to skip CI
   homebrew_cask: name={{ item }} state=present
-  with_items:
-    - adobe-photoshop-cs5     # large download causes CI timeout
-    - openemu-experimental    # dependent on newer OS version than Travis'
-    - virtualbox              # needs manual aproval in MacOS Security & Privacy prefpane
+  with_items: "{{ apps }}"
   when: ansible_os_family == 'Darwin' and ansible_env.CI is not defined
 
 - name: install binary casks
   homebrew_cask: name={{ item }} state=present
-  with_items:
-    - 1password
-    - azure-cli
-    - alfred
-    - arq
-    - atom
-    - beamer
-    - charles
-    - chromium
-    - doxie
-    - dropbox
-    - dropletmanager
-    - flux
-    - google-chrome-canary
-    - istat-menus
-    - java
-    - media-converter # could make its own role and clone the added presets i use
-    - sidestep
-    - sketch
-    - sketch-toolbox
-    - sketch-tool
-    - slate
-    - soulver
-    - steermouse
-    - tagger
-    - the-unarchiver
-    - transmission
-    - transmit
-    - visual-studio-code
-    - vlc
+  with_items: "{{ binary-casks }}"
   when: ansible_os_family == 'Darwin'
 
 - name: create ios emulator app link
@@ -87,10 +40,7 @@
 
 - name: install fonts
   homebrew_cask: name={{ item }} state=present
-  with_items:
-    - font-source-code-pro
-    - font-hack
-    - font-fantasque-sans-mono
+  with_items: "{{ fonts }}"
   when: ansible_os_family == 'Darwin'
 
 - name: apply OS X for hackers settings

@@ -1,0 +1,60 @@
+---
+cli-tools:
+    - build-essential
+    - avahi-daemon
+    - ffmpeg
+    - git
+    - nodejs
+    - python
+    - ruby
+    - ruby-dev
+    - s3cmd
+    - vim
+    - wget
+    - youtube-dl
+    - zsh
+
+binary-casks:
+    - 1password
+    - azure-cli
+    - alfred
+    - arq
+    - atom
+    - beamer
+    - charles
+    - chromium
+    - doxie
+    - dropbox
+    - dropletmanager
+    - flux
+    - google-chrome-canary
+    - istat-menus
+    - java
+    - media-converter # could make its own role and clone the added presets i use
+    - sidestep
+    - sketch
+    - sketch-toolbox
+    - sketch-tool
+    - slate
+    - soulver
+    - steermouse
+    - tagger
+    - the-unarchiver
+    - transmission
+    - transmit
+    - visual-studio-code
+    - vlc
+
+fonts:
+    - font-source-code-pro
+    - font-hack
+    - font-fantasque-sans-mono
+
+apps:
+    - adobe-photoshop-cs5     # large download causes CI timeout
+    - openemu-experimental    # dependent on newer OS version than Travis'
+    - virtualbox              # needs manual aproval in MacOS Security & Privacy prefpane
+
+gem-tools:
+    - jekyll
+    - kramdown
