@@ -22,7 +22,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export EDITOR="code -n"
 alias git=hub
-alias diff="ksdiff"
 alias atom="code -n"
 alias subl="code -n"
 alias mate="code -n"
@@ -99,7 +98,11 @@ function battery() { ,m
     grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
 }
 
-# show sysinfo on new shell (OSX)
+# show sysinfo on new shell
 if [[ "$OSTYPE" == darwin* ]]; then
     archey
+    alias diff="ksdiff"
+else
+    screenfetch
+    alias code="vim"
 fi
