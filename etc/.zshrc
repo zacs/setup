@@ -15,16 +15,16 @@ ZSH_THEME="prose"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx python terminalapp virtualenv xcode)
+plugins=(git osx python terminalapp vscode)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export EDITOR="atom -n -w"
+export EDITOR="code -n"
 alias git=hub
-alias atom="atom -n"
-alias subl="atom -n"
-alias mate="atom -n"
+alias atom="code -n"
+alias subl="code -n"
+alias mate="code -n"
 alias free="top -l 1 -s 0 | grep PhysMem:"
 alias ping="ping -c 5"
 alias weather="curl -sS wttr.in/98122 | head -27 "

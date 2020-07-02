@@ -1,6 +1,0 @@
----
-- name: add .slate
-  copy: >
-    dest=~/.slate
-    src=dotslate
-  when: ansible_os_family == 'Darwin'
