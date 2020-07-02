@@ -61,6 +61,7 @@ brew cask install dropbox
 brew cask install hey
 brew cask install istat-menus
 brew cask install karabiner-elements
+brew cask install ksdiff
 brew cask install plexamp
 brew cask install slack
 brew cask install soulver

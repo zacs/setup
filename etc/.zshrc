@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export EDITOR="code -n"
 alias git=hub
+alias diff="ksdiff"
 alias atom="code -n"
 alias subl="code -n"
 alias mate="code -n"
