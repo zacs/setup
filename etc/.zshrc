@@ -21,7 +21,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export EDITOR="code -n"
-alias git=hub
 alias atom="code -n"
 alias subl="code -n"
 alias mate="code -n"
@@ -102,6 +101,7 @@ function battery() { ,m
 if [[ "$OSTYPE" == darwin* ]]; then
     archey
     alias diff="ksdiff"
+    alias git=hub
 else
     screenfetch
     alias code="vim"
