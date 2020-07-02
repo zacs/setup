@@ -100,6 +100,6 @@ function battery() { ,m
 }
 
 # show sysinfo on new shell (OSX)
-if [[ "$OSTYPE" == "darwin*" ]]; then
+if [[ "$OSTYPE" == darwin* ]]; then
     archey
 fi
