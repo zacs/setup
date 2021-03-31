@@ -32,7 +32,7 @@ brew tap zacs/personal
 brew tap homebrew/cask-fonts
 
 # Install more recent versions of some macOS tools.
-brew install wget --with-iri
+brew install wget
 brew install vim
 brew install grep
 brew install openssh
