@@ -58,14 +58,12 @@ brew cask install 1password
 brew cask install alfred
 brew cask install arq
 brew cask install dropbox
-brew cask install hey
 brew cask install istat-menus
 brew cask install karabiner-elements
 brew cask install ksdiff
 brew cask install plexamp
 brew cask install slack
 brew cask install soulver
-brew cask install spotify
 brew cask install steermouse
 brew cask install the-unarchiver
 brew cask install transmit
@@ -75,7 +73,6 @@ brew cask install zoomus
 
 # Install Mac App Store apps.
 mas install 587512244 # Kaleidoscope (2.3.2)
-mas install 784801555 # Microsoft OneNote (16.38)
 mas install 441258766 # Magnet (2.4.5)
 mas install 1224268771 # Screens (4.7.8)
 mas install 1148868081 # iStat View (3.04)
