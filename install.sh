@@ -33,7 +33,7 @@ brew tap homebrew/cask-fonts
 
 # Install more recent versions of some macOS tools.
 brew install wget --with-iri
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
 brew install archey
@@ -46,30 +46,30 @@ brew install wget
 brew install youtube-dl
 
 # Install fonts.
-brew cask install font-cascadia-mono
-brew cask install font-consolas
-brew cask install font-fantasque-sans-mono
-brew cask install font-jetbrains-mono
-brew cask install font-operator-mono
-brew cask install font-source-code-pro
+brew install font-cascadia-mono
+brew install font-consolas
+brew install font-fantasque-sans-mono
+brew install font-jetbrains-mono
+brew install font-operator-mono
+brew install font-source-code-pro
 
 # Install casks.
-brew cask install 1password
-brew cask install alfred
-brew cask install arq
-brew cask install dropbox
-brew cask install istat-menus
-brew cask install karabiner-elements
-brew cask install ksdiff
-brew cask install plexamp
-brew cask install slack
-brew cask install soulver
-brew cask install steermouse
-brew cask install the-unarchiver
-brew cask install transmit
-brew cask install visual-studio-code
-brew cask install vlc
-brew cask install zoomus
+brew install 1password
+brew install alfred
+brew install arq
+brew install dropbox
+brew install istat-menus
+brew install karabiner-elements
+brew install ksdiff
+brew install plexamp
+brew install slack
+brew install soulver
+brew install steermouse
+brew install the-unarchiver
+brew install transmit
+brew install visual-studio-code
+brew install vlc
+brew install zoomus
 
 # Install Mac App Store apps.
 mas install 587512244 # Kaleidoscope (2.3.2)
