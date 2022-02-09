@@ -34,6 +34,7 @@ alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 alias icloud="brctl monitor ~/Library/Mobile Documents/com~apple~CloudDocs/"
 alias pyc="find . -name \"*.pyc\" -exec rm -rf {} \;"
 alias uptime="grc uptime"
+alias youtube-dl="yt-dlp"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -106,3 +107,5 @@ else
     screenfetch
     alias code="vim"
 fi
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
