@@ -5,7 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="prose"
+#ZSH_THEME="prose"
+ZSH_THEME="spaceship"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -96,7 +97,7 @@ function findstr() {
     fi
 }
 
-function battery() { ,m
+function battery() { 
     grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
     grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
 }
