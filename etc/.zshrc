@@ -102,6 +102,14 @@ function battery() {
     grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
 }
 
+function glances() {
+    if [[ "$OSTYPE" == darwin* ]]; then
+        echo "You're on MacOS, no Glances here."
+    else
+        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --network host -it nicolargo/glances:latest-full
+    fi
+}
+
 # show sysinfo on new shell
 if [[ "$OSTYPE" == darwin* ]]; then
     archey
