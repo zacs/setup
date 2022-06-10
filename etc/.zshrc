@@ -116,7 +116,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     alias diff="ksdiff"
     alias git=hub
 else
-    screenfetch
+    neofetch
     alias code="vim"
 fi
 
