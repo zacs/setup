@@ -25,7 +25,7 @@ export EDITOR="code -n"
 alias atom="code -n"
 alias subl="code -n"
 alias mate="code -n"
-alias free="top -l 1 -s 0 | grep PhysMem:"
+alias free="free -h"
 alias ping="ping -c 5"
 alias weather="curl -sS wttr.in/98122 | head -27 "
 alias up="ping 8.8.8.8"
@@ -112,7 +112,7 @@ function glances() {
 
 # show sysinfo on new shell
 if [[ "$OSTYPE" == darwin* ]]; then
-    archey
+    neofetch
     alias diff="ksdiff"
     alias git=hub
 else
