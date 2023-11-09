@@ -97,6 +97,13 @@ function findstr() {
     fi
 }
 
+function removedupes() {
+    for file in *'('* ; do 
+        origFile=$(sed 's/ *([0-9]*)//' <<<"$file")
+        [ -e "$origFile" ] && [ "$file" != "$origFile" ] && rm -- "$file"
+    done
+}
+
 function battery() { 
     grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
     grc pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
