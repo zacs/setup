@@ -82,6 +82,14 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# yt-dlp latest alias
+alias yt-dl='docker run \
+                  --rm -i \
+                  -e PGID=$(id -g) \
+                  -e PUID=$(id -u) \
+                  -v "$(pwd)":/workdir:rw \
+                  ghcr.io/mikenye/docker-youtube-dl:latest'
+
 # findstr: find non-case-sens strings in current dir, recursive
 function findstr() {
     if [ “$2” != “” ]
